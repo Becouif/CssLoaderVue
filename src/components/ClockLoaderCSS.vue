@@ -1,0 +1,31 @@
+<template>
+  <p>Clock Loader</p>
+  <div class="loader"></div>
+</template>
+
+<style scoped>
+@keyframes tick {
+  to {
+    transform: rotate(359deg);
+  }
+}
+.loader {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #f9f9f9;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  bottom: 29px;
+  left: 30px;
+  display: block;
+  transform-origin: 0% 100%;
+  width: 1px;
+  height: 24px;
+  background: #f9f9f9;
+  animation: tick 1s infinite linear;
+}
+</style>
